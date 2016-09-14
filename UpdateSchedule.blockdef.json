@@ -1,5 +1,5 @@
 {
-    "Type": "Raction/UpdateBySchedule",
+    "Type": "action/UpdateBySchedule",
     "Description": "",
     "Inputs": {
         "revitElements": {
