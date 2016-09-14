@@ -1,0 +1,37 @@
+{
+    "Type": "Raction/UpdateBySchedule",
+    "Description": "",
+    "Inputs": {
+        "revitElements": {
+            "Type": "[]*"
+        },
+        "scheduleUpdate": {
+            "Type": "[][]*"
+        }
+    },
+    "Outputs": {
+        "revitUpdate": {
+            "Type": "[]*"
+        }
+    },
+    "Require": {
+        "js": {
+            "src": "UpdateBySchedule.js"
+        },
+        "unsafe": true
+    },
+    "Config": {
+        "Streaming": false
+    },
+    "Display": {
+        "InputOrder": [
+            "revitElements",
+            "scheduleUpdate"
+        ],
+        "OutputOrder": [
+            "revitUpdate"
+        ]
+    },
+    "Tags": [],
+    "UserTags": ["Synchronise","Parameter Table","BIM","Data Table"]
+}

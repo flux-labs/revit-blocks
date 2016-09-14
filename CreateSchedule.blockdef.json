@@ -1,0 +1,37 @@
+{
+    "Type": "action/CreateSchedule",
+    "Description": "",
+    "Inputs": {
+        "parameterList": {
+            "Type": "[]*"
+        },
+        "revitElements": {
+            "Type": "[]*"
+        }
+    },
+    "Outputs": {
+        "schedule": {
+            "Type": "[][]*"
+        }
+    },
+    "Require": {
+        "js": {
+            "src": "CreateSchedule.js"
+        },
+        "unsafe": true
+    },
+    "Config": {
+        "Streaming": false
+    },
+    "Display": {
+        "InputOrder": [
+            "revitElements",
+            "parameterList"
+        ],
+        "OutputOrder": [
+            "schedule"
+        ]
+    },
+    "Tags": [],
+    "UserTags": ["Extract","Parameter Table","BIM","Data Table"]
+}
