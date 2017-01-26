@@ -16,8 +16,20 @@ var core = require("flux/core");
 function matchId(idParameter,revitElements, ParameterMap){
 	for(var t = 0; t<revitElements.length; t++)
 	{
-		if (revitElements[t][idParameter] == ParameterMap[idParameter]){
-			revit.updateParameters(revitElements[t], ParameterMap);
+		if(idParameter == 'ElementId'){
+			if (revitElements[t]['instanceParameters']['ElementId'] == ParameterMap[idParameter]){
+				revit.updateParameters(revitElements[t], ParameterMap);
+			}
+		}
+		else if(idParameter == 'UniqueId'){
+			if (revitElements[t]['instanceParameters']['UniqueId'] == ParameterMap[idParameter]){
+				revit.updateParameters(revitElements[t], ParameterMap);
+			}
+		}
+		else{
+			if (revitElements[t]['fluxId'] == ParameterMap[idParameter]){
+				revit.updateParameters(revitElements[t], ParameterMap);
+			}
 		}
 	}
 };
@@ -67,6 +79,12 @@ for(var z = 0; z<scheduleUpdate.length;z++){
 		//if schedule contains fluxId's, update according to fluxId
 		//console.log(revitElements)
 		matchId("fluxId",revitElements,ParameterMap);
+	}
+	else if(ParameterMap.UniqueId != undefined)
+	{
+		//if schedule contains UniqueId, update according to fluxId
+		//console.log(revitElements)
+		matchId("UniqueId",revitElements,ParameterMap);
 	}
 	else if(ParameterMap.ElementId != undefined)
 	{
