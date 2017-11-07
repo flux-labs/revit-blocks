@@ -1,5 +1,5 @@
 {
-    "Type": "CreateMaterialSchedule",
+    "Type": "action/CreateMaterialSchedule",
     "Description": "",
     "UserTags": [
         "Extract",
