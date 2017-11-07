@@ -20,3 +20,12 @@ Creates updated Revit elements based of an updated table schedule.
 
 #### Outputs:
 * `revitElements`
+
+### `CreateMaterialSchedule`
+#### Description
+Creates a material schedule based on a list of input Revit elements. Returns an empty array if the Material Info is not provided.
+#### Input:
+* `revitElements`
+
+#### Outputs:
+* `schedule`
