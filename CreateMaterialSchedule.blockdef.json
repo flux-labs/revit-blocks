@@ -1,0 +1,40 @@
+{
+    "Type": "CreateMaterialSchedule",
+    "Description": "",
+    "UserTags": [
+        "Extract",
+        "Parameter Table",
+        "BIM",
+        "Data Table",
+		"Material",
+		"Schedule"
+    ],
+    "Inputs": {
+        "revitElements": {
+            "Type": "[]*"
+        }
+    },
+    "Outputs": {
+        "schedule": {
+            "Type": "[][]*"
+        }
+    },
+    "Require": {
+        "js": {
+            "src": "CreateMaterialSchedule.js"
+        },
+        "unsafe": true
+    },
+    "Config": {
+        "Streaming": false
+    },
+    "Display": {
+        "InputOrder": [
+            "revitElements"
+        ],
+        "OutputOrder": [
+            "schedule"
+        ]
+    },
+    "Tags": []
+}
