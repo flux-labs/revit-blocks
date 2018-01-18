@@ -76,19 +76,20 @@ function run(revitElements, scheduleUpdate) {
 		
 		for (var i in setParams){
 			core.Set(ParameterMap, setParams[i], scheduleUpdate[z][i]);
+			let currPath = "customParameters"
 			
 			// Finding the path of the attribute
 			for (var j in attributes){
-				var paramList = Object.keys(revitElements[z][attributes[j]])
+				var paramList = Object.keys(revitElements[z][attributes[j]]);
 				if (paramList.includes(setParams[i])){
-					path.push(attributes[j])
-					
-					// Listing out the old and desired new values
-					oldValues.push(revitElements[z][attributes[j]][setParams[i]])
-					newValues.push(ParameterMap[setParams[i]])
+					currPath = attributes[j];
 					break
 				}
 			}
+			path.push(currPath);
+			// Listing out the old and desired new values
+			oldValues.push(revitElements[z][attributes[j]][setParams[i]]);
+			newValues.push(ParameterMap[setParams[i]]);
 		}
 		
 		if (ParameterMap.fluxId != undefined)
